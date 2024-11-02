@@ -1,6 +1,9 @@
 # firefox-kiosk
 FireFox Ubuntu Frame Wayland Kiosk
 
+# REQUIREMENTS
+Physical device running freshly installed Ubuntu Core 24
+
 # INSTALLATION - Ubuntu Core 24
 To install, simply download the file and save it to your home folder on the target Ubuntu Core device. You can do this with FileZilla or using SCP via terminal.
 
