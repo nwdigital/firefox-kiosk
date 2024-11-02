@@ -4,7 +4,7 @@ snap install ubuntu-frame;
 
 snap install firefox;
 
-snap connect firefox:wayland ubuntu-frame:wayland
+snap connect firefox:wayland ubuntu-frame:wayland;
 
 ############################################################################################################
 ###################################### CREATE THE SYSTEMD SERVICE FILE #####################################
