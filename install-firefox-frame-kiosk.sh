@@ -34,7 +34,7 @@ Environment=HOME=/root
 Environment=XDG_RUNTIME_DIR=/run/user/0
 Environment=XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
 ExecStartPre=/snap/bin/firefox --CreateProfile "default"
-ExecStart=/bin/sh -c 'export KIOSK_URL=$(cat $HOME/kiosk_url); exec /snap/bin/firefox -P default --kiosk --private-window --disable-pinch \$KIOSK_URL'
+ExecStart=/bin/sh -c 'export KIOSK_URL=\$(cat $HOME/kiosk_url); exec /snap/bin/firefox -P default --kiosk --private-window --disable-pinch \$KIOSK_URL'
 #ExecStart=/snap/bin/firefox -P default --kiosk --private-window --disable-pinch "https://www.yahoo.com"
 Nice=15
 
