@@ -110,13 +110,14 @@ echo "done";
 ############################################################################################################
 echo "Moving kiosk.service to /etc/systemd/system/kiosk.service";
 sudo mv kiosk.service /etc/systemd/system/;
-echo "done";
+echo "Kiosk Installed Successfully...";
 sudo systemctl enable kiosk.service;
-echo "done";
+echo "Kiosk service enabled...";
+sleep 5;
 snap start ubuntu-frame;
 sleep 5;
 sudo systemctl start kiosk.service;
-echo "done";
+echo "Kiosk starting...";
 ############################################################################################################
 
 echo "Installation Complete!";
