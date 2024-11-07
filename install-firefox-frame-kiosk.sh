@@ -117,7 +117,7 @@ sleep 2;
 echo "Starting Ubuntu-Frame...";
 sleep 2;
 snap start ubuntu-frame;
-sleep 5;
+sleep 10;
 sudo systemctl start kiosk.service;
 echo "Kiosk starting...";
 sleep 2;
