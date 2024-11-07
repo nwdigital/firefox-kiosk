@@ -9,9 +9,9 @@ snap connect firefox:wayland ubuntu-frame:wayland;
 ############################################################################################################
 ###################################### CREATE THE SYSTEMD SERVICE FILE #####################################
 ############################################################################################################
-echo "Creating firefox-kiosk.service systemd.service file...";
+echo "Creating kiosk.service systemd.service file...";
 
-cat <<EOF > firefox-kiosk.service
+cat <<EOF > kiosk.service
 [Unit]
 # https://www.freedesktop.org/software/systemd/man/systemd.unit.html#%5BUnit%5D%20Section%20Options \
 Description=Firefox Wayland Kiosk
@@ -83,7 +83,7 @@ Help()
 while getopts ":rhu" option; do
     case $option in
         r) # restart kiosk
-            sudo systemctl restart firefox-kiosk 
+            sudo systemctl restart kiosk 
             echo "Restarting Kiosk"
             exit;; 
         h) # display Help
@@ -91,7 +91,7 @@ while getopts ":rhu" option; do
             exit;;
         u) # update url
             echo $2 > /home/nwdigital/kiosk_url
-            sudo systemctl restart firefox-kiosk
+            sudo systemctl restart kiosk
             echo "New url is now: " $2
             exit;;
         \?) # Invalid option
@@ -108,14 +108,13 @@ echo "done";
 
 
 ############################################################################################################
-echo "Moving firefox-kiosk.service to /etc/systemd/system/firefox-kiosk.service";
-sudo mv firefox-kiosk.service /etc/systemd/system/;
+echo "Moving kiosk.service to /etc/systemd/system/kiosk.service";
+sudo mv kiosk.service /etc/systemd/system/;
 echo "done";
-sudo systemctl enable firefox-kiosk.service;
+sudo systemctl enable kiosk.service;
 echo "done";
-sudo systemctl start firefox-kiosk.service;
+sudo systemctl start kiosk.service;
 echo "done";
 ############################################################################################################
 
 echo "Installation Complete!";
-
