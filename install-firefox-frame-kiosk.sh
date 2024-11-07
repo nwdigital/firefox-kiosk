@@ -113,11 +113,14 @@ sudo mv kiosk.service /etc/systemd/system/;
 echo "Kiosk Installed Successfully...";
 sudo systemctl enable kiosk.service;
 echo "Kiosk service enabled...";
-sleep 5;
+sleep 2;
+echo "Starting Ubuntu-Frame...";
+sleep 2;
 snap start ubuntu-frame;
 sleep 5;
 sudo systemctl start kiosk.service;
 echo "Kiosk starting...";
+sleep 2;
 ############################################################################################################
 
 echo "Installation Complete!";
