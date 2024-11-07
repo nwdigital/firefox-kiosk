@@ -25,22 +25,4 @@ chmod a+x install-firefox-frame-kiosk.sh
 
 * Then enter the following replacing left or right in the orientation section and replacing HDMI-A-1 with your monitor name.
 
-snap set ubuntu-frame display="
-layouts:
-  default:
-    cards:
-    - card-id: 0
-      HDMI-A-1:
-        orientation: normal
-  portrait_left:
-    cards:
-    - card-id: 0
-      HDMI-A-1:
-        orientation: left
-"
-
-* Then use the following command to change to the portrait_left layout
-
-* $bash_user: `snap set ubuntu-frame display-layout=portrait_left`
-
 * To get the currently active layout: `snap get ubuntu-frame display-layout`
