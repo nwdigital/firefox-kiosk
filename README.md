@@ -12,3 +12,35 @@ chmod a+x install-firefox-frame-kiosk.sh
 
 # USAGE
 [Intructions Here](https://nwdigital.cloud/blog/2024/11/01/build-firefox-ubuntu-frame-kiosk-on-ubuntu-core-24-with-mir-kiosk/)
+
+
+# Set ubuntu-frame orientation
+* https://mir-server.io/docs/ubuntu-frame-configuration-options
+
+* First get the active display name and append -1 to it.
+
+* $user_bash: `snap logs -n 100 ubuntu-frame`
+
+* To get a list of connected displays: `snap get ubuntu-frame display`
+
+* Then enter the following replacing left or right in the orientation section and replacing HDMI-A-1 with your monitor name.
+
+* $user_bash: `snap set ubuntu-frame display="
+layouts:
+  default:
+    cards:
+    - card-id: 0
+      HDMI-A-1:
+        orientation: normal
+  portrait_left:
+    cards:
+    - card-id: 0
+      HDMI-A-1:
+        orientation: left
+"`
+
+* Then use the following command to change to the portrait_left layout
+
+* $bash_user: `snap set ubuntu-frame display-layout=portrait_left`
+
+* To get the currently active layout: `snap get ubuntu-frame display-layout`
