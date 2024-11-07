@@ -113,6 +113,8 @@ sudo mv kiosk.service /etc/systemd/system/;
 echo "done";
 sudo systemctl enable kiosk.service;
 echo "done";
+snap start ubuntu-frame;
+sleep 5;
 sudo systemctl start kiosk.service;
 echo "done";
 ############################################################################################################
