@@ -25,7 +25,7 @@ chmod a+x install-firefox-frame-kiosk.sh
 
 * Then enter the following replacing left or right in the orientation section and replacing HDMI-A-1 with your monitor name.
 
-* $user_bash: `snap set ubuntu-frame display="
+`snap set ubuntu-frame display="
 layouts:
   default:
     cards:
