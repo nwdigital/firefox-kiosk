@@ -70,6 +70,7 @@ Help()
    # Display Help
    echo "Syntax: scriptTemplate [-g|h|v|V]"
    echo "options:"
+   echo "-r     Restart the kiosk" 
    echo "-h     Print this Help."
    echo "-u     Sets the url for the kiosk."
 }
@@ -79,15 +80,19 @@ Help()
 ############################################################
 
 # Get the options
-while getopts ":hu" option; do
-    case \$option in
+while getopts ":rhu" option; do
+    case $option in
+        r) # restart kiosk
+            sudo systemctl restart firefox-kiosk 
+            echo "Restarting Kiosk"
+            exit;; 
         h) # display Help
             Help
             exit;;
         u) # update url
-            echo \$2 > $HOME/kiosk_url
+            echo $2 > /home/nwdigital/kiosk_url
             sudo systemctl restart firefox-kiosk
-            echo "New url is now: " \$2
+            echo "New url is now: " $2
             exit;;
         \?) # Invalid option
             echo "Error: Invalid option"
