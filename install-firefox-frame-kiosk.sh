@@ -15,7 +15,7 @@ cat <<EOF > kiosk.service
 [Unit]
 # https://www.freedesktop.org/software/systemd/man/systemd.unit.html#%5BUnit%5D%20Section%20Options \
 Description=Firefox Wayland Kiosk
-After=snap.ubuntu-frame.daemon.service snap.ubuntu-frame-osk.daemon.service getty.target
+After=snap.ubuntu-frame.daemon.service snap.ubuntu-frame-osk.daemon.service getty.target network.target network-online.target
 Wants=snap.ubuntu-frame-osk.daemon.service
 Requires=snap.ubuntu-frame.daemon.service
 Conflicts=display-manager.service
