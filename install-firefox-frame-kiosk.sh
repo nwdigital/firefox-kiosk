@@ -81,7 +81,7 @@ Help()
 
 # Get the options
 while getopts ":rhu" option; do
-    case $option in
+    case \$option in
         r) # restart kiosk
             sudo systemctl restart kiosk 
             echo "Restarting Kiosk"
