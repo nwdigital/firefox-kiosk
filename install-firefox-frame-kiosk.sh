@@ -90,7 +90,7 @@ while getopts ":rhu" option; do
             Help
             exit;;
         u) # update url
-            echo $2 > /home/nwdigital/kiosk_url
+            echo \$2 > /home/nwdigital/kiosk_url
             sudo systemctl restart kiosk
             echo "New url is now: " \$2
             exit;;
