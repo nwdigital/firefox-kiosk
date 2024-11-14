@@ -92,7 +92,7 @@ while getopts ":rhu" option; do
         u) # update url
             echo $2 > /home/nwdigital/kiosk_url
             sudo systemctl restart kiosk
-            echo "New url is now: " $2
+            echo "New url is now: " \$2
             exit;;
         \?) # Invalid option
             echo "Error: Invalid option"
