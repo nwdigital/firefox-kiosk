@@ -1,0 +1,9 @@
+[Unit]
+Description=Ubuntu Core Reboot Service
+
+[Service]
+Type=simple
+ExecStart=/sbin/reboot
+
+[Install]
+WantedBy=multi-user.target
