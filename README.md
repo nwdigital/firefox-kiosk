@@ -28,16 +28,13 @@ chmod a+x install-firefox-frame-kiosk.sh
 * To get the currently active layout: `snap get ubuntu-frame display-layout`
 
 # Reboot the device daily (Optional)
-If you would like to have your Ubuntu Core device reboot daily at a specific time, you can use the kiosk_reboot.service and kiosk_reboot.timer files included in the Main Repository here.
+If you would like to have your Ubuntu Core device reboot daily at a specific time, you can use the `kiosk_reboot.service` and `kiosk_reboot.timer` files included in the Main Repository here.
 
-* Create the kiosk_reboot.service file using this command:
-sudo vi /etc/systemd/system/kiosk_reboot.service and add the contents from the file I have here.
+* Create the kiosk_reboot.service file using this command: `sudo vi /etc/systemd/system/kiosk_reboot.service` and add the contents from the file I have here.
 
-* Next, create the kiosk_reboot.timer service using this command:
-sudo vi /etc/systemd/system/kiosk_reboot.timer.
+* Next, create the kiosk_reboot.timer service using this command: `sudo vi /etc/systemd/system/kiosk_reboot.timer`
 
 Once you have both files saved, simply enable and start the kiosk_reboot.timer.
-* Enter the following command in terminal:
-sudo systemctl enable kiosk_reboot.timer && sudo systemctl start kiosk_reboot.timer
+* Enter the following command in terminal: `sudo systemctl enable kiosk_reboot.timer && sudo systemctl start kiosk_reboot.timer`
 
 The reboot time is in UTC since that is the default timezone setting for Ubuntu Core. Adjust as needed.
