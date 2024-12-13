@@ -1,0 +1,12 @@
+[Unit]
+Description=Kiosk Reboot Timer
+
+[Timer]
+#OnCalendar=*:0/05
+# every 5 minutes
+
+OnCalendar=*-*-* 12:00:00
+# every day at 6 am CST based on UTC time
+
+[Install]
+WantedBy=timers.target
