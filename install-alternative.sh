@@ -27,6 +27,7 @@ Restart=always
 RestartSec=3
 EnvironmentFile=/home/$USER/kiosk_env_file
 EnvironmentFile=/home/$USER/kiosk_url
+ExecStartPre=/bin/sleep 5
 ExecStartPre=/snap/bin/firefox --CreateProfile "default"
 ExecStart=/snap/bin/firefox -P default -turbo -purgecaches -private-window --kiosk --disable-pinch \$KIOSK_URL
 #Nice=1
