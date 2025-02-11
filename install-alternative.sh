@@ -25,8 +25,8 @@ Conflicts=display-manager.service
 Type=simple
 Restart=always
 RestartSec=3
-EnvironmentFile=/home/\$USER/kiosk_env_file
-EnvironmentFile=/home/\$USER/kiosk_url
+EnvironmentFile=/home/$USER/kiosk_env_file
+EnvironmentFile=/home/$USER/kiosk_url
 ExecStartPre=/snap/bin/firefox --CreateProfile "default"
 ExecStart=/snap/bin/firefox -P default -turbo -purgecaches -private-window --kiosk --disable-pinch \$KIOSK_URL
 #Nice=1
@@ -48,7 +48,7 @@ MOX_CRASHREPORTER_DISABLE=1
 GDK_BACKEND=wayland
 MOZ_ENABLE_WAYLAND=1
 HOME=/root
-XDG_RUNTIME_DIR=/run/user/0
+XDG_RUNTIME_DIR=/run/$USER/0
 XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
 EOF
 echo "Environment Files Created Successfully";
@@ -136,7 +136,7 @@ while getopts ":rhu" option; do
             Help
             exit;;
         u) # update url
-            echo KIOSK_URL=\$2 > /home/\$USER/kiosk_url
+            echo KIOSK_URL=\$2 > /home/$USER/kiosk_url
             sudo systemctl restart kiosk
             echo "New url is now: " \$2
             exit;;
